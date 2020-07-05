@@ -4,10 +4,12 @@
   "description": "Final Project group 5",
   "main": "index.js",
   "dependencies": {
-    "eslint-config-prettier": "^6.11.0",
     "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.21",
     "prettier": "^2.0.5"
   },
   "devDependencies": {
