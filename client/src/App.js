@@ -1,26 +1,62 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import SignUp from "./pages/signup";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div>
-          <Switch>
-            <Route exact path={["/", "/singup"]} component={SignUp} />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+function App() {
+  return (
+    <div className="wrapper">
+      <div className="form-wrapper">
+        <h1>Create Account</h1>
+        <form noValidate>
+          <div className="firstName">
+            <label htmlFor="firstName">FirstName</label>
+            <input
+              type="text"
+              className=""
+              placeholder="FirstName"
+              name="Firstname"
+              noValidate
+            />
+          </div>
+          <div className="lastName">
+            <label htmlFor="lastName">LastName</label>
+            <input
+              type="text"
+              className=""
+              placeholder="lastName"
+              name="lastName"
+              noValidate
+            />
+          </div>
+          <div className="Email">
+            <label htmlFor="Email">Email</label>
+            <input
+              type="text"
+              className=""
+              placeholder="Email"
+              name="Email"
+              noValidate
+            />
+          </div>
+          <div className="Password">
+            <label htmlFor="Password">Password</label>
+            <input
+              type="text"
+              className=""
+              placeholder="Password"
+              name="Password"
+              noValidate
+            />
+          </div>
+          <div>
+            <div className="createAccount">
+              <button type="submit">createAccount</button>
+              <small>Already have an account?</small>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default App;
