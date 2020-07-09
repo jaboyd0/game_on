@@ -1,62 +1,24 @@
 import React from "react";
 import "./App.css";
+import SignUp from "./pages/SignUp";
+import Home from "./pages/Home";
+import {BrowserRouter as Router,Route,Switch,} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="wrapper">
-      <div className="form-wrapper">
-        <h1>Create Account</h1>
-        <form noValidate>
-          <div className="firstName">
-            <label htmlFor="firstName">FirstName</label>
-            <input
-              type="text"
-              className=""
-              placeholder="FirstName"
-              name="Firstname"
-              noValidate
-            />
-          </div>
-          <div className="lastName">
-            <label htmlFor="lastName">LastName</label>
-            <input
-              type="text"
-              className=""
-              placeholder="lastName"
-              name="lastName"
-              noValidate
-            />
-          </div>
-          <div className="Email">
-            <label htmlFor="Email">Email</label>
-            <input
-              type="text"
-              className=""
-              placeholder="Email"
-              name="Email"
-              noValidate
-            />
-          </div>
-          <div className="Password">
-            <label htmlFor="Password">Password</label>
-            <input
-              type="text"
-              className=""
-              placeholder="Password"
-              name="Password"
-              noValidate
-            />
-          </div>
-          <div>
-            <div className="createAccount">
-              <button type="submit">createAccount</button>
-              <small>Already have an account?</small>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path={["/", "/SingUp"]} component={SignUp} />
+            <Route exact path={["/", "/Home"]} component={Home} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
+
+
