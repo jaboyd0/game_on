@@ -15,6 +15,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
+  // Created to find by city..
+
+  findByCity: function(req, res) {
+    db.UserData
+      .find(req.query)
+      .sort({ city: req.body })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   create: function(req, res) {
     db.UserData
       .create(req.body)
