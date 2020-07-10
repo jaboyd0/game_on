@@ -20,8 +20,7 @@ module.exports = {
 
   findByCity: function(req, res) {
     db.UserData
-      .find(req.query)
-      .sort({ city: req.body })
+      .find({ city: req.params.city })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

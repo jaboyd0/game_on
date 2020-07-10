@@ -2,9 +2,15 @@ const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
 
 // Matches with "/api/users"
-router.route("/")
+router
+  .route("/")
   .get(usersController.findAll)
   .post(usersController.create);
+
+  // Should Match with "/api/users/city/:city"
+   router
+    .route("/city/:city")
+    .get(usersController.findByCity);
 
 // Matches with "/api/users/:id"
 router
@@ -13,9 +19,6 @@ router
   .put(usersController.update)
   .delete(usersController.remove);
 
-// Should Match with "/api/users/:city"
-  router
-    .route("/:city")
-    .get(usersController.findByCity);
+
 
 module.exports = router;
