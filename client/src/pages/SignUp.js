@@ -1,35 +1,65 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import axios from "axios";
 import "../styles/SignUp.css";
+function SigningUp() {
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const cityRef = useRef();
+  const passwordRef = useRef();  
 
-function App() {
+  const [redirect, setRedirect] = useState(false);
+  function submitButtonOnClicHandler(event) {
+    event.preventDefault();
+
+    axios({
+      url: "/api/users",
+      method: "post",
+      data: {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        city:  cityRef.current.value,
+        password: passwordRef.current.value
+      }
+    }).then(res => {
+      setRedirect(true);
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }  
   return (
     <div className="wrapper">
+      {redirect ? <Redirect to={} />: ""}
       <div className="form-wrapper">
         <h1>Create Account</h1>
         <form noValidate>
-          <div className="firstName">
-            <label htmlFor="firstName">FirstName</label>
+          <div className="name">
+            <label htmlFor="name">Name</label>
             <input
+              ref={nameRef}
               type="text"
               className=""
-              placeholder="FirstName"
+              placeholder="Please type your name"
               name="Firstname"
               noValidate
             />
           </div>
-          <div className="lastName">
-            <label htmlFor="lastName">LastName</label>
+          <div className="city">
+            <label htmlFor="city">City</label>
             <input
+              ref={cityRef}  
               type="text"
               className=""
-              placeholder="lastName"
-              name="lastName"
+              placeholder="Please select the city"
+              name="city"
               noValidate
             />
           </div>
           <div className="Email">
             <label htmlFor="Email">Email</label>
             <input
+              ref={emailRef}
               type="text"
               className=""
               placeholder="Email"
@@ -40,6 +70,7 @@ function App() {
           <div className="Password">
             <label htmlFor="Password">Password</label>
             <input
+              ref={passwordRef}  
               type="text"
               className=""
               placeholder="Password"
@@ -49,7 +80,7 @@ function App() {
           </div>
           <div>
             <div className="createAccount">
-              <button type="submit">createAccount</button>
+              <button onClick={submitButtonOnClicHandler} type="submit">createAccount</button>
               <small>Already have an account?</small>
             </div>
           </div>
@@ -58,5 +89,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default SigningUp;
