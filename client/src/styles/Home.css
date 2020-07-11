@@ -1,0 +1,15 @@
+.jumbotron {
+    background-image: url("./rise.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 50%;
+    background-color: black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 10px 10px 5px 0px;
+}
+
+.jumbotron h1 {
+    text-align: end;
+    color: white;
+}

@@ -1,16 +1,19 @@
 import React from 'react';
+import { Jumbotron } from 'react-bootstrap';
+import '../styles/Home.css'
 
 
+function Home() {
 
-function Home(props) {
+  return (
+    <div>
+      <Jumbotron>
+        <h1>Hello, user!</h1>
+      </Jumbotron>
+     </div>
 
-    return(
-        <div>
-          <p1>Hello!</p1>
-        </div>
-
-    
-    );
+  
+  );
 }
 
 
