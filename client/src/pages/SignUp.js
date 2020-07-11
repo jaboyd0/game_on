@@ -4,10 +4,11 @@ import "../styles/SignUp.css";
 function SigningUp() {
   const nameRef = useRef();
   const emailRef = useRef();
-  const cityRef = useRef();
   const passwordRef = useRef();  
 
   const [redirect, setRedirect] = useState(false);
+  const [city, setCity] = useState("");
+
   function submitButtonOnClicHandler(event) {
     event.preventDefault();
 
@@ -17,7 +18,7 @@ function SigningUp() {
       data: {
         name: nameRef.current.value,
         email: emailRef.current.value,
-        city:  cityRef.current.value,
+        city:  city,
         password: passwordRef.current.value
       }
     }).then(res => {
@@ -28,34 +29,41 @@ function SigningUp() {
       console.log(err);
     });
   }  
+
+
+  function handleSelectOnChange(event) {
+    let {name, value} = event.target;
+    setCity(value);
+  }
+
+
+
   return (
     <div className="wrapper">
-      {redirect ? <Redirect to={} />: ""}
       <div className="form-wrapper">
         <h1>Create Account</h1>
         <form noValidate>
-          <div className="name">
-            <label htmlFor="name">Name</label>
+          <div className="firstName">
+            <label htmlFor="firstName">Name</label>
             <input
               ref={nameRef}
               type="text"
               className=""
               placeholder="Please type your name"
-              name="Firstname"
+              name="name"
               noValidate
             />
           </div>
-          <div className="city">
-            <label htmlFor="city">City</label>
-            <input
-              ref={cityRef}  
-              type="text"
-              className=""
-              placeholder="Please select the city"
-              name="city"
-              noValidate
-            />
+
+          <div className="lastName">
+            <select onChange={handleSelectOnChange}>
+              <option>Fairfax</option>
+              <option>Arlington</option>
+              <option>Falls Church</option>
+              <option>Tyson Corner</option>
+            </select>                                                 
           </div>
+
           <div className="Email">
             <label htmlFor="Email">Email</label>
             <input
