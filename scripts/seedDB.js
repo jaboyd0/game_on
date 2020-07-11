@@ -14,11 +14,13 @@ const users = [
     name: "Salman",
     email: "salman@gmail.com",
     city: "Woodbridge",
+    password: "1234",
     date: new Date(Date.now())
   },
   {
     name: "Haegen",
     email: "heagen@gmail.com",
+    password: "1234",
     city: "Tyson",
     date: new Date(Date.now())
   },
@@ -26,12 +28,14 @@ const users = [
     name: "Josh",
     email: "josh@gmail.com",
     city: "Reston",
+    password: "1234",
     date: new Date(Date.now())
   },
   {
     name: "Ayuka",
     email: "ayuka@gmail.com",
     city: "Fairfax",
+    password: "1234",
     date: new Date(Date.now())
   },
   
