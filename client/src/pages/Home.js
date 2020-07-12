@@ -1,7 +1,7 @@
 import React from 'react';
 import { Jumbotron, Card } from 'react-bootstrap';
 import '../styles/Home.css'
-import Dropdown from '../components/Dropdown'
+import Drop from '../components/Dropdown'
 
 
 function Home() {
@@ -15,7 +15,7 @@ function Home() {
       <Card>
         <Card.Header>Select a Sport</Card.Header>
         <Card.Body>
-          <Dropdown />
+          <Drop />
         </Card.Body>
       </Card>
     </div>
