@@ -1,6 +1,7 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron, Card } from 'react-bootstrap';
 import '../styles/Home.css'
+import Dropdown from '../components/Dropdown'
 
 
 function Home() {
@@ -10,11 +11,21 @@ function Home() {
       <Jumbotron>
         <h1>Hello, user!</h1>
       </Jumbotron>
-     </div>
 
-  
+      <Card>
+        <Card.Header>Select a Sport</Card.Header>
+        <Card.Body>
+          <Dropdown />
+        </Card.Body>
+      </Card>
+    </div>
+
+
   );
 }
+
+
+
 
 
 export default Home;

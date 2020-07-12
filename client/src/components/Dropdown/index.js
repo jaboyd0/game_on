@@ -27,7 +27,6 @@ class Dropdown extends React.Component {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
-            Select a sport: 
             <select value={this.state.value} onChange={this.handleChange}>
               <option value="Basketball">Basketball</option>
               <option value="Soccer">Soccer</option>

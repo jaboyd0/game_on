@@ -11,5 +11,14 @@
 
 .jumbotron h1 {
     text-align: end;
-    color: white;
+    color: black;
+}
+
+.card {
+    size: 50px;
+    border: solid;
+    border-width: 5%;
+    margin-left: 2%;
+    width: 20%;
+    height: 50%;
 }
