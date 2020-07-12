@@ -24,10 +24,16 @@ function SigningUp() {
     }).then(res => {
       setRedirect(true);
       console.log(res);
+
+    }).then (() => {
+      nameRef.current.value = "";
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
     })
     .catch(err => {
       console.log(err);
     });
+    
   }  
 
 
@@ -49,21 +55,21 @@ function SigningUp() {
               ref={nameRef}
               type="text"
               className=""
-              placeholder="Please type your name"
+              placeholder="Name"
               name="name"
               noValidate
             />
-          </div>
-
+          </div><br></br>
           <div className="lastName">
             <select onChange={handleSelectOnChange}>
               <option>Fairfax</option>
               <option>Arlington</option>
               <option>Falls Church</option>
               <option>Tyson Corner</option>
-            </select>                                                 
+            </select>   
+            <p> Please select a city</p>                                              
           </div>
-
+          
           <div className="Email">
             <label htmlFor="Email">Email</label>
             <input
@@ -88,7 +94,7 @@ function SigningUp() {
           </div>
           <div>
             <div className="createAccount">
-              <button onClick={submitButtonOnClicHandler} type="submit">createAccount</button>
+              <button onClick={submitButtonOnClicHandler} type="button">createAccount</button>
               <small>Already have an account?</small>
             </div>
           </div>
