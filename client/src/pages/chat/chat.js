@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import BottomBar from './BottomBar';
 import './chat.css';
 
-class App extends React.Component {
+class Chat extends React.Component {
   constructor(props) {
     super(props);
 
@@ -112,4 +112,4 @@ class App extends React.Component {
   }
 };
 
-export default App;
+export default Chat;
