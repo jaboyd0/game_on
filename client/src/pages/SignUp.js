@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import "../styles/SignUp.css";
+import { Link, useHistory } from "react-router-dom";
+
 function SigningUp() {
   const nameRef = useRef();
   const emailRef = useRef();
@@ -23,7 +25,6 @@ function SigningUp() {
       },
     })
       .then((res) => {
-        setRedirect(true);
         console.log(res);
       })
       .then(() => {
@@ -93,9 +94,12 @@ function SigningUp() {
           <div>
             <div className="createAccount">
               <button onClick={submitButtonOnClicHandler} type="button">
-                createAccount
+                Create Account
               </button>
-              <small>Already have an account?</small>
+
+              <Link to="/Home">
+                <small className="btn btn-secondary" id= "reddish">Already have an account?</small>
+              </Link>
             </div>
           </div>
         </form>
