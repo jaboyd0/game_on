@@ -1,10 +1,12 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import "../styles/SignUp.css";
+import { Link, useHistory } from "react-router-dom";
+
 function SigningUp() {
   const nameRef = useRef();
   const emailRef = useRef();
-  const passwordRef = useRef();  
+  const passwordRef = useRef();
 
   const [redirect, setRedirect] = useState(false);
   const [city, setCity] = useState("");
@@ -18,25 +20,27 @@ function SigningUp() {
       data: {
         name: nameRef.current.value,
         email: emailRef.current.value,
-        city:  city,
-        password: passwordRef.current.value
-      }
-    }).then(res => {
-      setRedirect(true);
-      console.log(res);
+        city: city,
+        password: passwordRef.current.value,
+      },
     })
-    .catch(err => {
-      console.log(err);
-    });
-  }  
-
-
-  function handleSelectOnChange(event) {
-    let {name, value} = event.target;
-    setCity(value);
+      .then((res) => {
+        console.log(res);
+      })
+      .then(() => {
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        passwordRef.current.value = "";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
-
+  function handleSelectOnChange(event) {
+    let { name, value } = event.target;
+    setCity(value);
+  }
 
   return (
     <div className="wrapper">
@@ -49,19 +53,20 @@ function SigningUp() {
               ref={nameRef}
               type="text"
               className=""
-              placeholder="Please type your name"
+              placeholder="Name"
               name="name"
               noValidate
             />
           </div>
-
+          <br></br>
           <div className="lastName">
             <select onChange={handleSelectOnChange}>
               <option>Fairfax</option>
               <option>Arlington</option>
               <option>Falls Church</option>
               <option>Tyson Corner</option>
-            </select>                                                 
+            </select>
+            <p> Please select a city</p>
           </div>
 
           <div className="Email">
@@ -78,7 +83,7 @@ function SigningUp() {
           <div className="Password">
             <label htmlFor="Password">Password</label>
             <input
-              ref={passwordRef}  
+              ref={passwordRef}
               type="text"
               className=""
               placeholder="Password"
@@ -88,8 +93,13 @@ function SigningUp() {
           </div>
           <div>
             <div className="createAccount">
-              <button onClick={submitButtonOnClicHandler} type="submit">createAccount</button>
-              <small>Already have an account?</small>
+              <button onClick={submitButtonOnClicHandler} type="button">
+                Create Account
+              </button>
+
+              <Link to="/Home">
+                <small className="btn btn-secondary" id= "reddish">Already have an account?</small>
+              </Link>
             </div>
           </div>
         </form>
