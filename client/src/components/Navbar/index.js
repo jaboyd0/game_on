@@ -1,37 +1,31 @@
-<Navbar bg="dark" variant="dark">
-<Navbar.Brand href="#home">Navbar</Navbar.Brand>
-<Nav className="mr-auto">
-  <Nav.Link href="#home">Home</Nav.Link>
-  <Nav.Link href="#features">Features</Nav.Link>
-  <Nav.Link href="#pricing">Pricing</Nav.Link>
-</Nav>
-<Form inline>
-  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-  <Button variant="outline-info">Search</Button>
-</Form>
-</Navbar>
-
-
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import * as ReactBootstrap from 'react-bootstrap';
+import Home from '../../pages/Home';
 
-function Footer() {
+function Nav() {
 
-    return(
-        <footer className="mt-5">
-            <Container fluid={true}>
-                <Row className="border-top justify-content-between p-3">
-                    <Col className="p-0" md={3} sm={12}>
-                        Game On!
-                    </Col>
-                   
-                </Row>
-            </Container>
-        </footer>
+    return (
+        <div className="Navbar">
+            <ReactBootstrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <ReactBootstrap.Navbar.Brand href="#home">GameOn!</ReactBootstrap.Navbar.Brand>
+                <ReactBootstrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <ReactBootstrap.Navbar.Collapse id="responsive-navbar-nav">
+                    <ReactBootstrap.Nav className="mr-auto">
+                        <ReactBootstrap.NavDropdown title="Menu" id="collasible-nav-dropdown">
+                            <ReactBootstrap.NavDropdown.Item href="#action/3.1">Chat</ReactBootstrap.NavDropdown.Item>
+                            <ReactBootstrap.NavDropdown.Item href="#action/3.2">Dashboard</ReactBootstrap.NavDropdown.Item>
+                            <ReactBootstrap.NavDropdown.Divider />
+                            <ReactBootstrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootstrap.NavDropdown.Item>
+                        </ReactBootstrap.NavDropdown>
+                    </ReactBootstrap.Nav>
+                    <ReactBootstrap.Nav>
+                        <ReactBootstrap.Nav.Link exact path="/" component={Home} >Log Out</ReactBootstrap.Nav.Link>
+                    </ReactBootstrap.Nav>
+                </ReactBootstrap.Navbar.Collapse>
+            </ReactBootstrap.Navbar>
+        </div>
     );
 
 }
 
-export default Footer;
+export default Nav;

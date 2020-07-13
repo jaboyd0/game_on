@@ -2,10 +2,9 @@
     background-image:url("https://www.goalcast.com/wp-content/uploads/2018/05/kobe-bryant-quote-negative-things-are-opportunities.jpg");
     background-repeat: no-repeat;
     background-position: left;
-    background-size: 20%;
+    background-size: 25%;
     background-color: black;
-    background-blend-mode: ;
-    margin-top: 50px;
+    /* margin-top: 2%; */
     margin-bottom: 50px;
     box-shadow: 10px 10px 5px 0px;
     filter: grayscale(100%)
@@ -24,4 +23,8 @@
     width: 20%;
     height: 50%;
     border-style: dotted;
+}
+
+.card.body {
+    
 }
