@@ -1,8 +1,9 @@
-import React from "react";
+import  React from "react";
 import "./App.css";
 import SignUp from "./pages/SignUp";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import {BrowserRouter as Router,Route,Switch,} from "react-router-dom";
+
 
 class App extends React.Component {
   render() {
@@ -10,9 +11,11 @@ class App extends React.Component {
       <Router>
         <div>
           <Switch>
-            {/* <Route exact path={["/", "/SingUp"]} component={SignUp} /> */}
-            <Route exact path={["/", "/Home"]} component={Home} />
-            {/* <Route excat path={"/Singin"} component={Signin} /> */}
+
+          <Route exact path={["/", "/SignUp"]} component={SignUp} /> 
+            <Route exact path="/Home" component={Home} />
+            <Route excat path={"/Singin"} component={Signin} />
+
           </Switch>
         </div>
       </Router>
