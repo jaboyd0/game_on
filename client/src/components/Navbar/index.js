@@ -15,7 +15,7 @@ function Nav() {
                             <ReactBootstrap.NavDropdown.Item href="#action/3.1">Chat</ReactBootstrap.NavDropdown.Item>
                             <ReactBootstrap.NavDropdown.Item href="#action/3.2">Dashboard</ReactBootstrap.NavDropdown.Item>
                             <ReactBootstrap.NavDropdown.Divider />
-                            <ReactBootstrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootstrap.NavDropdown.Item>
+                            {/* <ReactBootstrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootstrap.NavDropdown.Item> */}
                         </ReactBootstrap.NavDropdown>
                     </ReactBootstrap.Nav>
                     <ReactBootstrap.Nav>

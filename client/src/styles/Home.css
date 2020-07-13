@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption');
+
 .jumbotron {
     background-image:url("https://www.goalcast.com/wp-content/uploads/2018/05/kobe-bryant-quote-negative-things-are-opportunities.jpg");
     background-repeat: no-repeat;
@@ -7,24 +9,30 @@
     /* margin-top: 2%; */
     margin-bottom: 50px;
     box-shadow: 10px 10px 5px 0px;
-    filter: grayscale(100%)
-}
-
-.jumbotron h1 {
-    text-align: end;
+    filter: grayscale(100%);
     color: black;
 }
 
-.card {
+.jumbotron h1 {
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    position: center;
+   
+}
+
+.cd{
     size: 50px;
     border: solid;
     border-width: 5%;
-    margin-left: 2%;
-    width: 20%;
+    margin-left: 42%;
+    margin-right: 50%;
+    margin-top: auto;
+    width: 25%;
     height: 50%;
-    border-style: dotted;
-}
-
-.card.body {
-    
+    border-style: solid;
+    position: center;
+    font-family: 'Coda Caption', 'sans-serif';
 }

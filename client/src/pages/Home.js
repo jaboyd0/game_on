@@ -13,13 +13,16 @@ function Home() {
       <Jumbotron>
         <h1>Hello, user!</h1>
       </Jumbotron>
+      <div className= "cd">
       <Card>
         <Card.Header>Select a Sport</Card.Header>
         <Card.Body>
           <Drop />
         </Card.Body>
       </Card>
+      </div>
     </div>
+    
 
 
   );
