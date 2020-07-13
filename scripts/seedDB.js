@@ -13,25 +13,29 @@ const users = [
   {
     name: "Salman",
     email: "salman@gmail.com",
-    city: "Woodbridge",
+    city: "Tyson Corner",
+    password: "1234",
     date: new Date(Date.now())
   },
   {
     name: "Haegen",
     email: "heagen@gmail.com",
-    city: "Tyson",
+    password: "1234",
+    city: "Falls Church",
     date: new Date(Date.now())
   },
   {
     name: "Josh",
     email: "josh@gmail.com",
-    city: "Reston",
+    city: "Arlington",
+    password: "1234",
     date: new Date(Date.now())
   },
   {
     name: "Ayuka",
     email: "ayuka@gmail.com",
     city: "Fairfax",
+    password: "1234",
     date: new Date(Date.now())
   },
   

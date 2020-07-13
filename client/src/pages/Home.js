@@ -1,8 +1,11 @@
 import React from 'react';
+
 import { Jumbotron, Card} from 'react-bootstrap';
 import '../styles/Home.css';
 import Drop from '../components/Dropdown';
 import Nav from '../components/Navbar';
+import Chat from './chat/chat'
+
 
 
 function Home() {
@@ -22,13 +25,8 @@ function Home() {
       </Card>
       </div>
     </div>
-    
-
-
   );
 }
-
-
 
 
 
