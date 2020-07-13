@@ -10,7 +10,7 @@ class App extends React.Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path={["/", "/SingUp"]} component={SignUp} />
+            {/* <Route exact path={["/", "/SingUp"]} component={SignUp} /> */}
             <Route exact path={["/", "/Home"]} component={Home} />
             {/* <Route excat path={"/Singin"} component={Signin} /> */}
           </Switch>
