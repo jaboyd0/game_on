@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CardInfo from 'react-bootstrap';
 
 
 function Card(props) {
