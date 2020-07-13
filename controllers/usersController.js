@@ -15,7 +15,22 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-
+  // checks if email is present or not for sign in page
+  findOne: function (req, res) {
+    db.UserData
+      .findOne({"email": req.body.email}, (err, user) => {
+        if(!user) res.json({message: "Login failed, user not found"})
+        
+        //IF email is present then it will compare password
+        user.comparePassword(req.body.password, (err,isMatch)=>{
+          if(err) throw err;
+          if(!isMatch) return res.status(400).json({
+              message:"Wrong Password"  
+          });
+          res.status(200).send("Logged in successfully")
+        })
+      })
+  }, 
   // Created to find by city..
 
   findByCity: function(req, res) {

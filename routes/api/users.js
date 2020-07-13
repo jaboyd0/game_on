@@ -8,9 +8,14 @@ router
   .post(usersController.create);
 
   // Should Match with "/api/users/city/:city"
-   router
-    .route("/city/:city")
-    .get(usersController.findByCity);
+router
+  .route("/city/:city")
+  .get(usersController.findByCity);
+
+ // Should Match with "/api/users/signin" (for sign in page). 
+ router
+ .route("/signin")
+ .get(usersController.findOne);
 
 // Matches with "/api/users/:id"
 router
