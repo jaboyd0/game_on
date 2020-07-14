@@ -15,7 +15,7 @@ router
  // Should Match with "/api/users/signin" (for sign in page). 
  router
  .route("/signin")
- .get(usersController.findOne);
+ .post(usersController.findOne);
 
 // Matches with "/api/users/:id"
 router

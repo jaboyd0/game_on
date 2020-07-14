@@ -12,10 +12,16 @@ class App extends React.Component {
       <Router>
         <div>
           <Switch>
+ uservalidate
+            <Route exact path={["/", "/SingUp"]} component={SignUp} />
+            <Route exact path= "/Home" component={Home} />
+            
+
 
           <Route exact path={["/", "/SignUp"]} component={SignUp} /> 
             <Route exact path="/Home" component={Home} />
             <Route exact path={"/SignIn"} component={SignIn} />
+
 
           </Switch>
         </div>
