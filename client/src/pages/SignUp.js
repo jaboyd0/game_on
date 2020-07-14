@@ -42,6 +42,7 @@ function SigningUp() {
     setCity(value);
   }
 
+
   return (
     <div className="wrapper">
       <div className="form-wrapper">
@@ -107,4 +108,7 @@ function SigningUp() {
     </div>
   );
 }
+
+
 export default SigningUp;
+
