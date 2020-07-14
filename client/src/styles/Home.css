@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-position: left;
     background-size: 25%;
-    background-color: black;
+    background-color: black!important;
     /* margin-top: 2%; */
     margin-bottom: 50px;
     box-shadow: 10px 10px 5px 0px;
@@ -14,8 +14,8 @@
 }
 
 .jumbotron h1 {
-    text-align: center;
-    color: black;
+    text-align: right;
+    color: rgb(114, 114, 114);
 }
 
 h2 {
@@ -23,7 +23,7 @@ h2 {
    
 }
 
-.cd{
+.card.cd{
     size: 50px;
     border: solid;
     border-width: 5%;

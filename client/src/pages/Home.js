@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Jumbotron, Card} from 'react-bootstrap';
+import { Jumbotron, Card } from 'react-bootstrap';
 import '../styles/Home.css';
 import Drop from '../components/Dropdown';
 import Nav from '../components/Navbar';
@@ -12,18 +12,17 @@ function Home() {
 
   return (
     <div>
-      <Nav/>
+      <Nav />
       <Jumbotron>
         <h1>Hello, user!</h1>
       </Jumbotron>
-      <div className= "cd">
-      <Card>
+      <Card className="cd">
         <Card.Header>Select a Sport</Card.Header>
         <Card.Body>
           <Drop />
         </Card.Body>
       </Card>
-      </div>
+      <Chat/>
     </div>
   );
 }
