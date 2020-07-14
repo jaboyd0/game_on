@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 
 
+
 class App extends React.Component {
   render() {
     return (
@@ -13,10 +14,10 @@ class App extends React.Component {
         <div>
           <Switch>
 
+
             <Route exact path={["/", "/SignUp"]} component={SignUp} />
             <Route exact path="/Home" component={Home} />
             <Route exact path={"/SignIn"} component={SignIn} />
-
 
           </Switch>
         </div>
