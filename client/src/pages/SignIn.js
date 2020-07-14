@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/SignUp.css";
+
 function SignIn() {
   return (
     <div className="wrapper">
@@ -36,4 +37,5 @@ function SignIn() {
     </div>
   );
 }
+
 export default SignIn;
