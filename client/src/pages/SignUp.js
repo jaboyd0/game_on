@@ -98,7 +98,7 @@ function SigningUp() {
                 Create Account
               </button>
 
-              <Link to="/Home">
+              <Link to="/SignIn">
                 <small className="btn btn-secondary" id= "reddish">Already have an account?</small>
               </Link>
             </div>
