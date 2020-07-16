@@ -16,6 +16,7 @@ class Chat extends React.Component {
       chat: [],
       content: '',
       name: '',
+      chatgroup: 'Arlington'
     };
   }
 
@@ -64,6 +65,7 @@ class Chat extends React.Component {
       this.socket.emit('message', {
         name: state.name,
         content: state.content,
+        group: this.state.chatgroup
       });
 
       // update page w/current message remove from type area
@@ -81,6 +83,10 @@ class Chat extends React.Component {
   scrollToBottom() {
     const chat = document.getElementById('chat');
     chat.scrollTop = chat.scrollHeight;
+  }
+
+  change() {
+    this.setState({ chatgroup: 'Raleigh'})
   }
 
   render() {
@@ -107,6 +113,7 @@ class Chat extends React.Component {
           handleSubmit={this.handleSubmit.bind(this)}
           name={this.state.name}
           />
+           <button onClick= {this.change}>change chat</button>
       </div>
     );
   }
