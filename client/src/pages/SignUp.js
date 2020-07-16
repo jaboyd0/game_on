@@ -49,7 +49,7 @@ function SigningUp() {
     setCity(value);
   
   if(!signed){ 
-  return (
+    return (
     <div className="wrapper">
       <div className="form-wrapper">
         <h1>Create Account</h1>
@@ -68,6 +68,7 @@ function SigningUp() {
           <br></br>
           <div className="lastName">
             <select onChange={handleSelectOnChange}>
+              <option></option>
               <option>Fairfax</option>
               <option>Arlington</option>
               <option>Falls Church</option>
@@ -102,7 +103,7 @@ function SigningUp() {
             <div className="createAccount">
               <button onClick={submitButtonOnClicHandler} type="button">
                 Create Account
-              </button>
+              </button><br></br>
 
               <Link to="/SignIn">
                 <small className="btn btn-secondary" id= "reddish">Already have an account?</small>
