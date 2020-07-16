@@ -1,14 +1,15 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import "../styles/SignUp.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Redirect} from "react-router-dom";
 
 function SigningUp() {
+  const [signed, setSignup] = useState(false); 
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const [redirect, setRedirect] = useState(false);
+  
   const [city, setCity] = useState("");
 
   function submitButtonOnClicHandler(event) {
@@ -25,12 +26,18 @@ function SigningUp() {
       },
     })
       .then((res) => {
-        console.log(res);
-      })
-      .then(() => {
+        if (res.status === 200) {
+          setSignup(true);
+         } 
+     
+    })
+
+      .then((res) => {
+        
         nameRef.current.value = "";
         emailRef.current.value = "";
         passwordRef.current.value = "";
+        setCity("");
       })
       .catch((err) => {
         console.log(err);
@@ -40,9 +47,8 @@ function SigningUp() {
   function handleSelectOnChange(event) {
     let { name, value } = event.target;
     setCity(value);
-  }
-
-
+  
+  if(!signed){ 
   return (
     <div className="wrapper">
       <div className="form-wrapper">
@@ -105,8 +111,12 @@ function SigningUp() {
           </div>
         </form>
       </div>
-    </div>
-  );
+  </div> );
+  } else {
+    // redirect to home if signed up
+    return <Redirect to = {{ pathname: "/SignIn" }} />;
+  }    
+
 }
 
 
