@@ -49,7 +49,7 @@ function SigningUp() {
     setCity(value);
   }
   if(!signed){ 
-  return (
+    return (
     <div className="wrapper">
       <div className="form-wrapper">
         <h1>Create Account</h1>
@@ -119,4 +119,7 @@ function SigningUp() {
   }    
 
 }
+
+
 export default SigningUp;
+

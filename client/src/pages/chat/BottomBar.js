@@ -45,7 +45,7 @@ export default function BottomBar(props) {
     const classes = useStyles();
 
     return (
-        <AppBar position="fixed" className={classes.appBar}>
+        <AppBar position="relative" className={classes.appBar}>
             <Toolbar>
                 <div className={classes.inputContainer} style={{maxWidth: '200px'}}>
                     <div className={classes.icon}>

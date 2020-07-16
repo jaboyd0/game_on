@@ -22,7 +22,15 @@ function Home() {
           <Drop />
         </Card.Body>
       </Card>
-      <Chat/>
+
+      <h2>
+        <Card className="message">
+          <Card.Header>Get Connected</Card.Header>
+          <Card.Body>
+            <Chat />
+          </Card.Body>
+        </Card>
+      </h2>
     </div>
   );
 }
