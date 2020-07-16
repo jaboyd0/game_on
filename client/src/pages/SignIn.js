@@ -66,7 +66,7 @@ axios({
           </div>
           <div>
             <div className="createAccount">
-              <button onClick={loggingInHandler} type="submit">Log in</button>
+              <button onClick={loggingInHandler} type="submit">Log in</button><br></br>
               <Link to="/SignUp">
                 <small className="btn btn-secondary" id= "reddish">Need to Sign Up?</small>
               </Link>
@@ -75,7 +75,7 @@ axios({
         </form>
       </div>
     </div>);
-    
+
 }
 
 export default SignIn;
