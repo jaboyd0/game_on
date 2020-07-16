@@ -18,21 +18,23 @@
     color: rgb(114, 114, 114);
 }
 
-h2 {
-    position: center;
-   
+h2{
+    position: left;
+    border-style: solid;
+    border-color: black;
+    margin-top: relative;
+    margin: 12%;
 }
 
-.card.cd{
+.cd.card{
     size: 50px;
     border: solid;
-    border-width: 5%;
-    margin-left: 42%;
-    margin-right: 50%;
+    border-width: 1%;
+    margin-left: 12%;
     margin-top: auto;
-    width: 25%;
-    height: 50%;
+    margin-bottom: 5%;
+    width: 15%;
     border-style: solid;
-    position: center;
+    position: left;
     font-family: 'Coda Caption', 'sans-serif';
 }

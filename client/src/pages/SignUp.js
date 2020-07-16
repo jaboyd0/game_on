@@ -47,7 +47,7 @@ function SigningUp() {
   function handleSelectOnChange(event) {
     let { name, value } = event.target;
     setCity(value);
-  }
+  
   if(!signed){ 
   return (
     <div className="wrapper">
@@ -118,4 +118,7 @@ function SigningUp() {
   }    
 
 }
+
+
 export default SigningUp;
+
