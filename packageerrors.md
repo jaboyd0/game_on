@@ -156,9 +156,6 @@
       }
     },
     "ansi-regex": {
-      "version": "2.1.1",
-      "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
-      "integrity": "sha1-w7M6te42DYbg5ijwRorn7yfWVN8=",
       "version": "3.0.0",
       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-3.0.0.tgz",
       "integrity": "sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=",
@@ -4560,3 +4557,8 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
