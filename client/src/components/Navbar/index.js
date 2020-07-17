@@ -1,6 +1,7 @@
 import React from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import Home from '../../pages/Home';
+import { Link, useHistory } from "react-router-dom";
 
 function Nav() {
 
@@ -19,7 +20,7 @@ function Nav() {
                         </ReactBootstrap.NavDropdown>
                     </ReactBootstrap.Nav>
                     <ReactBootstrap.Nav>
-                        <ReactBootstrap.Nav.Link exact path="/" component={Home} >Log Out</ReactBootstrap.Nav.Link>
+                        <Link to="/SignIn"> Log Out</Link>
                     </ReactBootstrap.Nav>
                 </ReactBootstrap.Navbar.Collapse>
             </ReactBootstrap.Navbar>
