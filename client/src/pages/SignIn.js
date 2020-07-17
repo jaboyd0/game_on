@@ -1,14 +1,13 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import "../styles/SignUp.css";
-import { Link } from "react-router-dom";
-
+import { Link, useHistory} from "react-router-dom";
 function SignIn() {
   
   
   const emailRef = useRef();
   const passwordRef = useRef();
-
+  const history = useHistory();
 
  function loggingInHandler(event) {
   event.preventDefault();
@@ -25,7 +24,10 @@ axios({
     .then((res) => {
       console.log(res);
       const responsing = res.data.message;
-      alert(responsing);
+      //alert(responsing);
+      console.log(responsing);
+      
+      history.push('/Home');
       
     })
       .then((res) => {
