@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import "../styles/SignUp.css";
-import { Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 function SignIn() {
   
   
@@ -24,11 +24,12 @@ axios({
     .then((res) => {
       console.log(res);
       const responsing = res.data.message;
-      //alert(responsing);
-      console.log(responsing);
       
+      if (!responsing) { 
       history.push('/Home');
-      
+      } else {
+      alert(responsing);
+      }
     })
       .then((res) => {
         emailRef.current.value = "";
