@@ -114,7 +114,7 @@ function SigningUp() {
       </div>
   </div> );
   } else {
-    // redirect to home if signed up
+    // redirect to signin page if signed up
     return <Redirect to = {{ pathname: "/SignIn" }} />;
   }    
 
