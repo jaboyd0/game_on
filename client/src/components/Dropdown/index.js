@@ -12,19 +12,22 @@ class Dropdown extends React.Component {
     this.state = { value: 'Basketball' };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({ value: event.target.value },() => {
       this.props.switchRoom(this.state.value)
+      this.props.switchSport(this.state.value)
     });
   }
 
-  handleSubmit(event) {
-    alert('You have selected: ' + this.state.value);
-    event.preventDefault();
-  }
+  // handleSubmit(event) {
+  //   this.setState({ value: event.target.value },() => {
+  //     this.props.switchRoom(this.state.value)
+  //     // this.props.switchSport(this.state.value)
+  //   });
+  // }
 
   render() {
     return (

@@ -24,7 +24,8 @@ class Home extends React.Component {
     this.state = {
       chat: [],
       socket: {},
-      room: 'Arlington',
+      sport: '-',
+      room: '-',
     };
   }
 
@@ -50,6 +51,7 @@ class Home extends React.Component {
       });
 
       this.state.socket.on('connect', () => {
+        this.state.socket.emit('sport', this.state.sport)
         this.state.socket.emit('room', this.state.room)
         console.log('connected');
       });
@@ -69,8 +71,20 @@ class Home extends React.Component {
     });
   }
 
-  switchRoom(room) {
+  switchSport(sport) {
     this.setState({
+      sport: sport,
+      // room: room,
+      chat: []
+    }, () => {
+      this.state.socket.emit('sport', this.state.sport)
+      console.log('connected', this.state.sport);
+    })
+  }
+
+  switchRoom(room, sport) {
+    this.setState({
+      sport: sport,
       room: room,
       chat: []
     }, () => {
@@ -93,7 +107,7 @@ class Home extends React.Component {
             <Card className="cd">
               <Card.Header>Select a Sport</Card.Header>
               <Card.Body>
-                <Drop switchRoom={this.switchRoom.bind(this)} />
+                <Drop switchRoom={this.switchRoom.bind(this)} switchSport={this.switchSport.bind(this)}/>
               </Card.Body>
             </Card>
           </Col>
@@ -102,7 +116,7 @@ class Home extends React.Component {
             <Card className="message">
               <Card.Header>Get Connected</Card.Header>
               <Card.Body>
-                <Chat socket={this.state.socket} chat={this.state.chat} room={this.state.room} />
+                <Chat socket={this.state.socket} chat={this.state.chat} room={this.state.room} sport={this.state.sport}/>
               </Card.Body>
             </Card>
           </Col>
