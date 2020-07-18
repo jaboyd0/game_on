@@ -98,7 +98,7 @@ class Home extends React.Component {
             </Card>
           </Col>
 
-          <Col lg>
+          <Col xs={12} md={8}>
             <Card className="message">
               <Card.Header>Get Connected</Card.Header>
               <Card.Body>
