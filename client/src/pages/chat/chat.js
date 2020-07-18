@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 import BottomBar from './BottomBar';
 import './chat.css';
+import { Button } from '@material-ui/core';
 
 class Chat extends React.Component {
   constructor(props) {
@@ -16,11 +17,13 @@ class Chat extends React.Component {
       chat: [],
       content: '',
       name: '',
+      room: 'Raleigh',
     };
   }
 
   componentDidMount() {
     this.socket = io(config[process.env.NODE_ENV].endpoint);
+    this.socket.connect()
 
     // load last 10 messages on page
     this.socket.on('init', (msg) => {
@@ -34,6 +37,15 @@ class Chat extends React.Component {
       this.setState((state) => ({
         chat: [...state.chat, msg],
       }), this.scrollToBottom);
+    });
+
+    this.socket.on('connect', () => {
+      this.socket.emit('room', this.state.room)
+      console.log('connected');
+    });
+
+    this.socket.on('message', (data) => {
+      console.log('incoming message: ', data)
     });
   }
 
@@ -83,6 +95,18 @@ class Chat extends React.Component {
     chat.scrollTop = chat.scrollHeight;
   }
 
+  switchRoom(event) {
+
+  //   if (this.state.room === 'Arlington') {
+  //     this.setState().room = 'Raleigh'
+  //   }
+  //   else {
+  //     this.state.room = 'Arlington'
+  //   }
+
+    console.log(this.state.room)
+  }
+
   render() {
     return (
       <div className="App">
@@ -107,6 +131,7 @@ class Chat extends React.Component {
           handleSubmit={this.handleSubmit.bind(this)}
           name={this.state.name}
           />
+          <button onClick= {this.switchRoom()}>change chat</button>
       </div>
     );
   }
