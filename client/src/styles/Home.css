@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Coda+Caption');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Neucha&family=Rowdies:wght@700&family=Shadows+Into+Light&display=swap');
+
+.homepage {
+    /*height: 100vh;
+    width: 100%;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    background-image:url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fas1.ftcdn.net%2Fjpg%2F02%2F55%2F78%2F60%2F500_F_255786001_nqunh2BB5NWxpKyHaGWaelZo5qW3smsV.jpg&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fimages%2Fhuge-multi-sports-collage-athletics-tennis-soccer-basketball-etc%2F255786001&tbnid=VtDAFUmguyRlQM&vet=12ahUKEwiqkeyS0NXqAhXDBN8KHRp3C-IQMygJegUIARCyAQ..i&docid=f4GmQHQmHGCwhM&w=500&h=223&q=sport%20collage&hl=en&ved=2ahUKEwiqkeyS0NXqAhXDBN8KHRp3C-IQMygJegUIARCyAQ");
+    background-repeat: no-repeat;
+}
 
 .jumbotron {
     background-image:url("https://www.goalcast.com/wp-content/uploads/2018/05/kobe-bryant-quote-negative-things-are-opportunities.jpg");
@@ -15,7 +26,9 @@
 
 .jumbotron h1 {
     text-align: right;
-    color: rgb(114, 114, 114);
+    color: white;
+    font-family: 'Neucha', cursive;
+
 }
 
 h2{
@@ -24,17 +37,31 @@ h2{
     border-color: black;
     margin-top: relative;
     margin: 12%;
+    font-family: 'Neucha', cursive;
 }
 
 .cd.card{
     size: 50px;
     border: solid;
     border-width: 1%;
-    margin-left: 12%;
-    margin-top: auto;
+    /* margin-left: 12%; */
+    margin-top: 5%;
     margin-bottom: 5%;
-    width: 15%;
+    width: 400px;
     border-style: solid;
     position: left;
-    font-family: 'Coda Caption', 'sans-serif';
+    font-family: 'Neucha', cursive;
+    font-size: 25px;
+    overflow: scroll;
+    max-height: calc(100vh - 128px);
+    padding: 16px;
+}
+
+.Google {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-position-x: right;
+    background-position-y: top;
+
+
 }
