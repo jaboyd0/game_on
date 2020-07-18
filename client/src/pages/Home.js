@@ -6,7 +6,6 @@ import Chat from './chat/chat';
 import io from 'socket.io-client';
 import config from './chat/config'
 import { Jumbotron, Card, Container, Row, Col } from "react-bootstrap";
-import "../styles/Home.css";
 import Map from "../components/Map";
 
 
@@ -84,78 +83,78 @@ class Home extends React.Component {
     return (
       <Container fluid true>
         <div className="homepage">
-        <Nav />
-        <Jumbotron>
-          <h1>Welcome to GameOn!</h1>
-        </Jumbotron></div>
-      
-      <Row>
-      <Col lg>
-        <Card className="cd">
-          <Card.Header>Select a Sport</Card.Header>
-          <Card.Body>
-            <Drop switchRoom={this.switchRoom.bind(this)} />
-          </Card.Body>
-        </Card>
-      </Col>
+          <Nav />
+          <Jumbotron>
+            <h1>Welcome to GameOn!</h1>
+          </Jumbotron></div>
 
-        <Col lg>
-          <Card className="message">
-            <Card.Header>Get Connected</Card.Header>
-            <Card.Body>
-              <Chat socket={this.state.socket} chat={this.state.chat} room={this.state.room}  />
-            </Card.Body>
-          </Card>
-        </Col>
-     
- </Row>
+        <Row>
+          <Col lg>
+            <Card className="cd">
+              <Card.Header>Select a Sport</Card.Header>
+              <Card.Body>
+                <Drop switchRoom={this.switchRoom.bind(this)} />
+              </Card.Body>
+            </Card>
+          </Col>
 
-      <Row>
-        <Col>
-          <Card className="Google">
-            <Map location={location} zoomLevel={17} />
-          </Card>
-        </Col>
+          <Col lg>
+            <Card className="message">
+              <Card.Header>Get Connected</Card.Header>
+              <Card.Body>
+                <Chat socket={this.state.socket} chat={this.state.chat} room={this.state.room} />
+              </Card.Body>
+            </Card>
+          </Col>
 
-      </Row>
+        </Row>
 
-    </Container >
-  );
+        <Row>
+          <Col>
+            <Card className="Google">
+              <Map location={location} zoomLevel={17} />
+            </Card>
+          </Col>
 
-}
+        </Row>
 
-
-// <div className="homepage">
-//   <Nav />
-//   <Jumbotron>
-//     <h1>Welcome to GameOn!</h1>
-//   </Jumbotron>
+      </Container >
+    );
+  }
+  }
 
 
-//   <Card className="cd">
-//     <Card.Header>Select a Sport</Card.Header>
-//     <Card.Body>
-//       <Drop />
-//     </Card.Body>
-//   </Card>
-
-//   <h2>
-//     <Card className="message">
-//       <Card.Header>Get Connected</Card.Header>
-//       <Card.Body>
-//         <Chat />
-//       </Card.Body>
-//     </Card>
-//   </h2>
-
-//   <h3>
-//     <Card className="Google">
-//       <Map location={location} zoomLevel={17} />
-//     </Card>
-
-//   </h3>
+  // <div className="homepage">
+  //   <Nav />
+  //   <Jumbotron>
+  //     <h1>Welcome to GameOn!</h1>
+  //   </Jumbotron>
 
 
+  //   <Card className="cd">
+  //     <Card.Header>Select a Sport</Card.Header>
+  //     <Card.Body>
+  //       <Drop />
+  //     </Card.Body>
+  //   </Card>
+
+  //   <h2>
+  //     <Card className="message">
+  //       <Card.Header>Get Connected</Card.Header>
+  //       <Card.Body>
+  //         <Chat />
+  //       </Card.Body>
+  //     </Card>
+  //   </h2>
+
+  //   <h3>
+  //     <Card className="Google">
+  //       <Map location={location} zoomLevel={17} />
+  //     </Card>
+
+  //   </h3>
 
 
-export default Home;
+
+
+  export default Home;
