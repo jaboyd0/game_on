@@ -16,7 +16,9 @@ class Dropdown extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value },() => {
+      this.props.switchRoom(this.state.value)
+    });
   }
 
   handleSubmit(event) {
@@ -36,10 +38,10 @@ class Dropdown extends React.Component {
         </label>
         <label>
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="Location">Arlington</option>
-            <option value="Location">Fairfax</option>
-            <option value="Location">Falls Church</option>
-            <option value="Location">Tysons</option>
+            <option value="Arlington">Arlington</option>
+            <option value="FairFax">Fairfax</option>
+            <option value="Falls Church">Falls Church</option>
+            <option value="Tysons">Tysons</option>
 
           </select>
         </label><input type="submit" value="Submit" />

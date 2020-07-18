@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react';
+import '../styles/Home.css';
+import Drop from '../components/Dropdown';
+import Nav from '../components/Navbar';
+import Chat from './chat/chat';
+import io from 'socket.io-client';
+import config from './chat/config'
 import { Jumbotron, Card, Container, Row, Col } from "react-bootstrap";
 import "../styles/Home.css";
-import Drop from "../components/Dropdown";
-import Nav from "../components/Navbar";
-import Chat from "./chat/chat";
 import Map from "../components/Map";
+
 
 
 const location = {
@@ -13,36 +17,98 @@ const location = {
   lng: -122.08427,
 };
 
-function Home() {
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <Container fluid true>
-      <div className="homepage">
+
+    this.state = {
+      chat: [],
+      socket: {},
+      room: 'Arlington',
+    };
+  }
+
+  componentDidMount() {
+
+    this.setState({
+      socket: io(config[process.env.NODE_ENV].endpoint)
+    }, () => {
+      this.state.socket.connect()
+
+      // load last 10 messages on page
+      this.state.socket.on('init', (msg) => {
+        this.setState((state) => ({
+          chat: [...state.chat, ...msg.reverse()],
+        }), this.scrollToBottom);
+      });
+
+      // Update the chat if a new message is broadcasted
+      this.state.socket.on('push', (msg) => {
+        this.setState((state) => ({
+          chat: [...state.chat, msg],
+        }), this.scrollToBottom);
+      });
+
+      this.state.socket.on('connect', () => {
+        this.state.socket.emit('room', this.state.room)
+        console.log('connected');
+      });
+
+      this.state.socket.on('message', (data) => {
+        console.log('incoming message: ', data)
+        this.setState((state) => {
+
+          // update page w/current message remove from type area
+          return {
+            chat: [...state.chat, data],
+            content: '',
+          };
+        }, this.scrollToBottom);
+      });
+
+    });
+  }
+
+  switchRoom(room) {
+    this.setState({
+      room: room,
+      chat: []
+    }, () => {
+      this.state.socket.emit('room', this.state.room)
+      console.log('connected', this.state.room);
+    })
+  }
+
+  render() {
+    return (
+      <Container fluid true>
+        <div className="homepage">
         <Nav />
         <Jumbotron>
           <h1>Welcome to GameOn!</h1>
         </Jumbotron></div>
-
+      
       <Row>
-        <Col lg>
-          <Card className="cd">
-            <Card.Header>Select a Sport</Card.Header>
-            <Card.Body>
-              <Drop />
-            </Card.Body>
-          </Card>
-        </Col>
+      <Col lg>
+        <Card className="cd">
+          <Card.Header>Select a Sport</Card.Header>
+          <Card.Body>
+            <Drop switchRoom={this.switchRoom.bind(this)} />
+          </Card.Body>
+        </Card>
+      </Col>
 
         <Col lg>
           <Card className="message">
             <Card.Header>Get Connected</Card.Header>
             <Card.Body>
-              <Chat />
+              <Chat socket={this.state.socket} chat={this.state.chat} room={this.state.room}  />
             </Card.Body>
           </Card>
         </Col>
-
-      </Row>
+     
+ </Row>
 
       <Row>
         <Col>
@@ -55,6 +121,7 @@ function Home() {
 
     </Container >
   );
+
 }
 
 

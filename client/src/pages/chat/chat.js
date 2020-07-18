@@ -1,6 +1,4 @@
 import React from 'react';
-import config from  './config'
-import io from 'socket.io-client';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -13,28 +11,9 @@ class Chat extends React.Component {
     super(props);
 
     this.state = {
-      chat: [],
       content: '',
       name: '',
     };
-  }
-
-  componentDidMount() {
-    this.socket = io(config[process.env.NODE_ENV].endpoint);
-
-    // load last 10 messages on page
-    this.socket.on('init', (msg) => {
-      this.setState((state) => ({
-        chat: [...state.chat, ...msg.reverse()],
-      }), this.scrollToBottom);
-    });
-
-    // Update the chat if a new message is broadcasted
-    this.socket.on('push', (msg) => {
-      this.setState((state) => ({
-        chat: [...state.chat, msg],
-      }), this.scrollToBottom);
-    });
   }
 
   // save messge user is typing
@@ -57,24 +36,17 @@ class Chat extends React.Component {
     //prevent form from reloading page
     event.preventDefault();
 
-    this.setState((state) => {
-      console.log(state);
-      console.log('this', this.socket);
+    console.log(this.state);
+      console.log('this', this.props.socket);
+
       // sends message to server
-      this.socket.emit('message', {
-        name: state.name,
-        content: state.content,
+      console.log(this.props)
+      this.props.socket.emit('message', {
+        name: this.state.name,
+        content: this.state.content,
+        room: this.props.room,
       });
 
-      // update page w/current message remove from type area
-      return {
-        chat: [...state.chat, {
-          name: state.name,
-          content: state.content,
-        }],
-        content: '',
-      };
-    }, this.scrollToBottom);
   }
 
   // ensure window is scrolled to latest message
@@ -83,11 +55,12 @@ class Chat extends React.Component {
     chat.scrollTop = chat.scrollHeight;
   }
 
+
   render() {
     return (
       <div className="App">
         <Paper id="chat" elevation={3}>
-          {this.state.chat.map((el, index) => {
+          {this.props.chat.map((el, index) => {
             return (
               <div key={index}>
                 <Typography variant="caption" className="name">
