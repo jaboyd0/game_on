@@ -31,7 +31,7 @@ class Dropdown extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="Basketball">Basketball</option>
+            <option value="Basketball" >Basketball</option>
             <option value="Soccer">Soccer</option>
             <option value="Tennis">Tennis</option>
           </select>

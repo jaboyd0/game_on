@@ -1,18 +1,26 @@
 import React from 'react';
-
-import { Jumbotron, Card } from 'react-bootstrap';
 import '../styles/Home.css';
 import Drop from '../components/Dropdown';
 import Nav from '../components/Navbar';
 import Chat from './chat/chat';
 import io from 'socket.io-client';
 import config from './chat/config'
+import { Jumbotron, Card, Container, Row, Col } from "react-bootstrap";
+import "../styles/Home.css";
+import Map from "../components/Map";
 
 
+
+const location = {
+  address: "1600 Amphitheatre Parkway, Mountain View, california.",
+  lat: 37.42216,
+  lng: -122.08427,
+};
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
+
 
     this.state = {
       chat: [],
@@ -74,31 +82,79 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container fluid true>
+        <div className="homepage">
         <Nav />
         <Jumbotron>
-          <h1>Hello, user!</h1>
-        </Jumbotron>
+          <h1>Welcome to GameOn!</h1>
+        </Jumbotron></div>
+      
+      <Row>
+      <Col lg>
         <Card className="cd">
           <Card.Header>Select a Sport</Card.Header>
           <Card.Body>
             <Drop switchRoom={this.switchRoom.bind(this)} />
           </Card.Body>
         </Card>
+      </Col>
 
-        <h2>
+        <Col lg>
           <Card className="message">
             <Card.Header>Get Connected</Card.Header>
             <Card.Body>
               <Chat socket={this.state.socket} chat={this.state.chat} room={this.state.room}  />
             </Card.Body>
           </Card>
-        </h2>
-      </div>
-    );
-  }
+        </Col>
+     
+ </Row>
+
+      <Row>
+        <Col>
+          <Card className="Google">
+            <Map location={location} zoomLevel={17} />
+          </Card>
+        </Col>
+
+      </Row>
+
+    </Container >
+  );
 
 }
+
+
+// <div className="homepage">
+//   <Nav />
+//   <Jumbotron>
+//     <h1>Welcome to GameOn!</h1>
+//   </Jumbotron>
+
+
+//   <Card className="cd">
+//     <Card.Header>Select a Sport</Card.Header>
+//     <Card.Body>
+//       <Drop />
+//     </Card.Body>
+//   </Card>
+
+//   <h2>
+//     <Card className="message">
+//       <Card.Header>Get Connected</Card.Header>
+//       <Card.Body>
+//         <Chat />
+//       </Card.Body>
+//     </Card>
+//   </h2>
+
+//   <h3>
+//     <Card className="Google">
+//       <Map location={location} zoomLevel={17} />
+//     </Card>
+
+//   </h3>
+
 
 
 
