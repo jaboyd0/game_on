@@ -24,7 +24,7 @@ function Home() {
         </Jumbotron></div>
 
       <Row>
-        <Col>
+        <Col lg>
           <Card className="cd">
             <Card.Header>Select a Sport</Card.Header>
             <Card.Body>
@@ -33,7 +33,7 @@ function Home() {
           </Card>
         </Col>
 
-        <Col>
+        <Col lg>
           <Card className="message">
             <Card.Header>Get Connected</Card.Header>
             <Card.Body>
