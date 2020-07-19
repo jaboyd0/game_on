@@ -21,7 +21,7 @@ class Home extends React.Component {
 
   handleDropDownChange = (event) => {
     this.setState({ room: event.target.value }, () => {
-      this.switchRoom(this.state.value);
+      this.switchRoom(this.state.room);
     });
   };
 
