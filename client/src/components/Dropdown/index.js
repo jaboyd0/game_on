@@ -26,10 +26,18 @@ class Dropdown extends React.Component {
           <select
             onChange={this.props.handleDropDownChange}
           >
-            <option value="Arlington, VA">Arlington</option>
-            <option value="FairFax, VA">Fairfax</option>
-            <option value="Falls Church, VA">Falls Church</option>
-            <option value="Tysons, VA">Tysons</option>
+            <option value="Arlington, VA+">Basketball - Arlington</option>
+            <option value="FairFax, VA+">Basketball - Fairfax</option>
+            <option value="Falls Church, VA+">Basketball - Falls Church</option>
+            <option value="Tysons, VA+">Basketball - Tysons</option>
+            <option value="Arlington, VA-">Soccer - Arlington</option>
+            <option value="FairFax, VA-">Soccer - Fairfax</option>
+            <option value="Falls Church, VA-">Soccer - Falls Church</option>
+            <option value="Tysons, VA-">Soccer - Tysons</option>
+            <option value="Arlington, VA_">Tennis - Arlington</option>
+            <option value="FairFax, VA_">Tennis - Fairfax</option>
+            <option value="Falls Church, VA_">Tennis - Falls Church</option>
+            <option value="Tysons, VA_">Tennis - Tysons</option>
           </select>
         </label>
         <input type="submit" value="Submit" />

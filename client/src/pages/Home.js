@@ -15,13 +15,16 @@ class Home extends React.Component {
     this.state = {
       chat: [],
       socket: {},
-      room: "Arlington, VA",
+      // location: "Arlington, VA",
+      room: "Arlington, VA+",
     };
   }
 
   handleDropDownChange = (event) => {
-    this.setState({ room: event.target.value }, () => {
-      this.switchRoom(this.state.value);
+    // console.log(event.target.value)
+    this.setState({ room: event.target.value}, () => {
+      // location: event.target.value
+      this.switchRoom(this.state.room);
     });
   };
 
