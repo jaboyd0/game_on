@@ -3,7 +3,7 @@ import GoogleMap from "google-map-react";
 import { Icon } from "@iconify/react";
 import locationIcon from "@iconify/icons-mdi/map-marker";
 import { Card } from "react-bootstrap";
-import "../../styles/map.css";
+import '../Map/map.css'
 import axios from "axios";
 
 // //test
@@ -22,7 +22,7 @@ import axios from "axios";
 
 
 const LocationPin = ({ text }) => (
-  <div>
+  <div class="mapPin">
     <Icon icon={locationIcon} />
     <p>{text}</p>
   </div>
@@ -91,6 +91,7 @@ const Map = ({ sportAndCity, zoomLevel }) => {
                 lat={location.geometry.location.lat}
                 lng={location.geometry.location.lng} 
                 text={location.name}
+                style={{ p: "fixed" }} 
 
               />
               })}

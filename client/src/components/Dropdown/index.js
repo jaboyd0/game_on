@@ -40,7 +40,7 @@ class Dropdown extends React.Component {
             <option value="Tennis-Tysons, VA_">Tennis - Tysons</option>
           </select>
         </label>
-        <input type="submit" value="Submit" />
+        {/* <input type="submit" value="Submit" /> */}
       </form>
     );
   }
