@@ -78,7 +78,8 @@ const Map = ({ sportAndCity, zoomLevel }) => {
                 key: "AIzaSyA5Kk4KZ5Ia-PHpXo97abm9JPZYm6xGVgY",
               }}
               center={location.location}
-              defaultZoom={zoomLevel}
+              defaultZoom={14}
+              // defaultZoom={zoomLevel}
             >
               {/*<LocationPin
                 lat={location.location.lat}
@@ -86,8 +87,11 @@ const Map = ({ sportAndCity, zoomLevel }) => {
               />*/}
               {sportLocations.map(location => {
                 return <LocationPin
+                className="pin"
                 lat={location.geometry.location.lat}
-                lng={location.geometry.location.lng} text={location.name}
+                lng={location.geometry.location.lng} 
+                text={location.name}
+
               />
               })}
             </GoogleMap>
