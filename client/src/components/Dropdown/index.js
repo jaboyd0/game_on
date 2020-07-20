@@ -13,31 +13,31 @@ class Dropdown extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <select
+          {/* <select
             value={this.state.value}
             onChange={this.props.handleDropDownChange}
           >
             <option value="Basketball">Basketball</option>
             <option value="Soccer">Soccer</option>
             <option value="Tennis">Tennis</option>
-          </select>
+          </select> */}
         </label>
         <label>
           <select
             onChange={this.props.handleDropDownChange}
           >
-            <option value="Arlington, VA+">Basketball - Arlington</option>
-            <option value="FairFax, VA+">Basketball - Fairfax</option>
-            <option value="Falls Church, VA+">Basketball - Falls Church</option>
-            <option value="Tysons, VA+">Basketball - Tysons</option>
-            <option value="Arlington, VA-">Soccer - Arlington</option>
-            <option value="FairFax, VA-">Soccer - Fairfax</option>
-            <option value="Falls Church, VA-">Soccer - Falls Church</option>
-            <option value="Tysons, VA-">Soccer - Tysons</option>
-            <option value="Arlington, VA_">Tennis - Arlington</option>
-            <option value="FairFax, VA_">Tennis - Fairfax</option>
-            <option value="Falls Church, VA_">Tennis - Falls Church</option>
-            <option value="Tysons, VA_">Tennis - Tysons</option>
+            <option value="Basketball-Arlington, VA+">Basketball - Arlington</option>
+            <option value="Basketball-FairFax, VA+">Basketball - Fairfax</option>
+            <option value="Basketball-Falls Church, VA+">Basketball - Falls Church</option>
+            <option value="Basketball-Tysons, VA+">Basketball - Tysons</option>
+            <option value="Soccer-Arlington, VA-">Soccer - Arlington</option>
+            <option value="Soccer-FairFax, VA-">Soccer - Fairfax</option>
+            <option value="Soccer-Falls Church, VA-">Soccer - Falls Church</option>
+            <option value="Soccer-Tysons, VA-">Soccer - Tysons</option>
+            <option value="Tennis-Arlington, VA_">Tennis - Arlington</option>
+            <option value="Tennis-FairFax, VA_">Tennis - Fairfax</option>
+            <option value="Tennis-Falls Church, VA_">Tennis - Falls Church</option>
+            <option value="Tennis-Tysons, VA_">Tennis - Tysons</option>
           </select>
         </label>
         <input type="submit" value="Submit" />

@@ -10,6 +10,7 @@
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.5.0",
+    "google": "^2.1.0",
     "google-map-react": "^1.1.7",
     "install": "^0.13.0",
     "npm": "^6.14.6",

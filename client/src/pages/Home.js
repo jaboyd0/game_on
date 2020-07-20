@@ -16,7 +16,7 @@ class Home extends React.Component {
       chat: [],
       socket: {},
       // location: "Arlington, VA",
-      room: "Arlington, VA+",
+      room: "Basketball-Arlington, VA+",
     };
   }
 
@@ -131,7 +131,7 @@ class Home extends React.Component {
         <Row>
           <Col>
             <Card className="Google">
-              <Map city={this.state.room} zoomLevel={17} />
+              <Map sportAndCity={this.state.room} zoomLevel={17} />
             </Card>
           </Col>
         </Row>
